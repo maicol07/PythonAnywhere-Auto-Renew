@@ -15,8 +15,8 @@ if not USERNAME or not PASSWORD:
     print("❌ Error: PA_USERNAME and PA_PASSWORD must be set")
     sys.exit(1)
 
-LOGIN_URL = "https://www.pythonanywhere.com/login/"
-DASHBOARD_URL = f"https://www.pythonanywhere.com/user/{USERNAME}/webapps/"
+LOGIN_URL = "https://eu.pythonanywhere.com/login/"
+DASHBOARD_URL = f"https://eu.pythonanywhere.com/user/{USERNAME}/webapps/"
 
 def renew():
     session = requests.Session()
@@ -99,7 +99,7 @@ def renew():
             return False
         
         # 6. Submit extend request
-        extend_url = f"https://www.pythonanywhere.com{extend_action}"
+        extend_url = f"https://eu.pythonanywhere.com{extend_action}"
         print(f"⏰ Extending web app at {extend_url}...")
         
         result = session.post(
